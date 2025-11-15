@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroop Color Word Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <!-- Front Page -->
+    <div id="frontPage">
+        <h1 class="main-title">Stroop Effect</h1>
+        <div class="card-main">
+            <h2>Play the Stroop Test Now</h2>
+            <div class="how-to-play">
+                <h3>How to Play</h3>
+                <ul>
+                    <li><strong>Goal:</strong> Click the button that matches the COLOR of the displayed word.</li>
+                    <li><strong>Challenge:</strong> Ignore the word’s meaning, focus only on the display color.</li>
+                    <li><strong>Time:</strong> 60-second countdown.</li>
+                    <li><strong>Scoring:</strong> Based on accuracy and reaction time.</li>
+                </ul>
+                <p class="example"><strong>Example:</strong> When you see the word "Red" displayed in <strong>blue color</strong>, click the <strong>Blue</strong> button!</p>
+            </div>
+
+            <div class="difficulty-selector">
+                <label for="difficultySelect">Choose Difficulty:</label>
+                <select id="difficultySelect">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="customization-area">
+                <h3><img src="https://i.imgur.com/vJ4coJ8.png" alt="Settings" class="header-icon"> Customize Test</h3>
+                <textarea id="wordList" placeholder="Enter words, separated by commas...">RED, BLUE, GREEN, YELLOW, BLACK</textarea>
+                <textarea id="colorList" placeholder="Enter color hex codes, separated by commas...">#F44336, #2196F3, #4CAF50, #212121, #FFEB3B</textarea>
+                <button id="applyCustomBtn" class="modern-button history">Apply Custom Settings</button>
+            </div>
+
+            <div class="front-buttons">
+                <button id="startGameBtn" class="modern-button start">Start Test</button>
+                <button id="viewHistoryBtn" class="modern-button history">View History</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="mainGame" class="hidden card-main">
+        <div class="info-cards">
+            <div class="card"><div>Time Left</div><div id="timeTv">60</div></div>
+            <div class="card"><div>Score</div><div id="scoreTv">0</div></div>
+            <div class="card"><div>Accuracy</div><div id="accuracyTv">0%</div></div>
+        </div>
+        <div id="wordTv">GREEN</div>
+        <div class="color-buttons"></div>
+        <div class="instruction-card"><p>Click the button that matches the <b>COLOR</b> of the displayed word, not the word itself!</p></div>
+    </div>
+
+    <!-- History Page -->
+    <div id="historyPage" class="hidden card-main">
+        <h2>Game History</h2>
+        <div id="historyList"></div>
+        <div class="history-buttons">
+             <button id="backToMenuBtn" class="modern-button start">Back to Menu</button>
+             <button id="deleteHistoryBtn" class="modern-button danger">Delete History</button>
+        </div>
+    </div>
+
+    <!-- Results Page -->
+    <div id="resultsPage" class="hidden card-main">
+        <div class="results-container">
+            <h2 class="complete-title">Test Complete!</h2>
+            <div class="stats-grid"></div>
+            <div class="chart-container"><canvas id="qualityChart"></canvas></div>
+            <div class="chart-container"><canvas id="speedChart"></canvas></div>
+            <div class="results-buttons">
+                <button id="restartTestBtn" class="modern-button start">Restart Test</button>
+                <button id="viewHistoryResultsBtn" class="modern-button history">View History</button>
+                <button id="backToMenuResultsBtn" class="modern-button start">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Powered by Ricky Ai</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* General Body & Container */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F0F4F8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Card Styles */
+.card-main {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 100%;
+}
+
+/* Front Page Specifics */
+.main-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4A00E0;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.how-to-play, .customization-area {
+    background-color: #F8F9FD;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    margin: 24px 0;
+    border: 1px solid #E0E4E9;
+}
+
+.customization-area h3, .how-to-play h3 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.customization-area textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+}
+
+.front-buttons, .history-buttons, .results-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.modern-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.modern-button.start {
+    background: linear-gradient(90deg, #8A2BE2, #4B0082);
+}
+
+.modern-button.history {
+    background-color: #E9ECEF;
+    color: #495057;
+}
+
+.modern-button.danger {
+    background-color: #F44336;
+}
+
+.modern-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Screen & Results */
+.info-cards, .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+.stats-grid { grid-template-columns: repeat(4, 1fr); }
+.card, .stat-card { background-color: #FFFFFF; border-radius: 8px; padding: 16px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+.card div:first-child, .stat-card div:first-child { font-size: 12px; color: #666; }
+.card div:last-child, .stat-card div:last-child { font-size: 24px; font-weight: bold; }
+#wordTv { font-size: 60px; font-weight: bold; text-transform: uppercase; margin: 40px 0; }
+.color-buttons { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+.color-buttons button { width: 80px; height: 80px; border-radius: 50%; border: none; color: white; font-weight: bold; }
+.instruction-card { background-color: #F8F9FD; border: 1px solid #E0E4E9; border-radius: 8px; padding: 16px; max-width: 450px; margin: 0 auto; }
+.complete-title { color: #4CAF50; font-size: 24px; }
+.chart-container { margin: 20px 0; }
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #888;
+    font-size: 12px;
+    width: 100%;
+    flex-shrink: 0;
+}
